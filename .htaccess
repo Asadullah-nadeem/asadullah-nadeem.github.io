@@ -1,0 +1,34 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Block specific user agents
+RewriteCond %{HTTP_USER_AGENT} HTTrack [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} wget [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} curl [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} libwww [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} python [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} WinHTTrack [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} "Nmap Scripting Engine" [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Go-http-client [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} apachebench [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} ^.*(crawler|spider|scanner).* [NC]
+RewriteRule .* - [F,L]
+
+# Block direct IP access but allow subdomains
+RewriteCond %{HTTP_HOST} !^codeaxe\.co\.in [NC]
+RewriteCond %{HTTP_HOST} !^bucket\.codeaxe\.co\.in [NC]
+RewriteRule .* - [F,L]
+
+
+# Protect .htaccess file
+<Files ".htaccess">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Define custom error pages
+ErrorDocument 400 /400.shtml
+ErrorDocument 401 /401.shtml
+ErrorDocument 403 /403.shtml
+ErrorDocument 404 /404.shtml
+ErrorDocument 500 /500.shtml
