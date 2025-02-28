@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asadullah Nadeem - Developer Portfolio</title>
+    <meta name="description" content="Welcome to Asadullah Nadeem's developer portfolio. Explore my skills, projects, and contact information. Type 'help' to see available commands.">
+    <meta name="keywords" content="Asadullah Nadeem, developer portfolio, Java developer, projects, skills, contact, resume">
+    <meta name="author" content="Asadullah Nadeem">
+    <meta property="og:title" content="Asadullah Nadeem - Developer Portfolio">
+    <meta property="og:description" content="Welcome to Asadullah Nadeem's developer portfolio. Explore my skills, projects, and contact information. Type 'help' to see available commands.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asadullah-nadeem.github.io/">
+    <meta property="og:image" content="https://asadullah-nadeem.github.io/images/og-image.jpg">
+    <link rel="canonical" href="https://asadullah-nadeem.github.io/">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Asadullah Nadeem",
+            "jobTitle": "Developer",
+            "url": "https://asadullah-nadeem.github.io",
+            "sameAs": [
+                "https://github.com/Asadullah-nadeem",
+                "https://www.linkedin.com/in/asadullah-nadeem/"
+            ],
+            "skills": ["Java", "kotlin ", "PHP", "Linux", "Ubuntu Linux", "Server Linux", "Android Development"],
+            "description": "A passionate developer who turns ideas into reality."
+        }
+    </script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-black">
+    <div id="splashScreen" class="splash-screen">
+        <p>Initializing system...</p>
+    </div>
+    <div class="terminal">
+        <div id="output">
+            <p class="output">
+                Welcome to My Portfolio! Type <span class="command">help</span> or <span class="command">h</span> to
+                see available commands.
+            </p>
+
+            <div class="ip-address" id="ip-address4">Loading IPv4...</div>
+            <div class="ip-address" id="ip-address6">Loading IPv6...</div>
+        </div>
+        <div class="flex items-center">
+            <span class="command">user@guest:~</span>
+            <input type="text" id="commandInput"
+                class="bg-transparent border-none text-green-500 ml-2 focus:outline-none flex-1" disabled>
+            <span class="cursor"></span>
+        </div>
+    </div>
+    <div class="footer">
+        <div id="time"></div>
+        <div>
+            <span id="cpu">CPU: 12%</span> |
+            <span id="gpu">GPU: 8%</span> |
+            <span id="storage">Storage: 75%</span>
+
+        </div>
+    </div>
+
+    <script src="js/script.js"> </script>
+</body>
+
+</html>
